@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>blacklog.net – Support</title>
+  <meta name="description" content="En varm og hjælpsom supportside for blacklog.net – downloads, kontakt og nyttige links." />
+  <link rel="icon" href="/assets/favicon/blacklog.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font-Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    :root {
+      --accent: #0ea5e9;            /* warm blue */
+      --accent-2: #f59e0b;          /* golden */
+      --bg: #0b1320;                /* deep blue/black */
+      --surface: #0f172a;           /* changeing blue (generel card) */
+      --surface-contrast: #1e293b;  /* lighter contrast card */
+      --text: #e5e7eb;              /* light gray */
+      --muted: #94a3b8;             /* softer gray */
+      --divider: rgba(255,255,255,0.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+      /* Section-specific colors */
+      --hero-card-bg: #22314b;       /* lighter blue background */
+      --hero-card-text: #f1f5f9;     /* off white */
+      --contact-card-bg: #25344d;    /* darckish */
+      --contact-card-text: #ffffff;  /* white */
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--bg), #0d1b2a 45%, #10223a);
+      color: var(--text);
+    }
+
+    .navbar {
+      background: rgba(11,19,32,0.75);
+      backdrop-filter: saturate(140%) blur(10px);
+    }
+
+    .brand-logo {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      font-size: 1.35rem;
+      text-decoration: none;
+    }
+
+    .blacklog { color: var(--text) !important; }
+    .dotnet  { color: var(--accent) !important; }
+
+    .hero {
+      padding: 6rem 0 3rem;
+    }
+
+    .hero h1 { font-weight: 800; }
+    .hero p { color: var(--muted); }
+
+    /* Support i tre trin styling */
+    .hero .support-card {
+      background: var(--hero-card-bg);
+      color: var(--hero-card-text);
+      border: 1px solid var(--divider);
+      box-shadow: var(--shadow);
+    }
+    .hero .support-card h2 { color: var(--hero-card-text); }
+    .hero .support-card li { color: var(--hero-card-text); }
+
+    /* Contact section styling */
+    .contact-card {
+      background: var(--contact-card-bg);
+      color: var(--contact-card-text);
+      border: 1px solid var(--divider);
+      box-shadow: var(--shadow);
+    }
+    .contact-card a { color: var(--accent); }
+    .contact-card a:hover { color: #7dd3fc; }
+
+    /* General */
+    .card { background: var(--surface); border: 1px solid rgba(255,255,255,0.06); }
+    .card .card-title { color: #fff; }
+    a { color: var(--accent); }
+    a:hover { color: #7dd3fc; }
+    .btn-accent { background: var(--accent); color: #001222; border: 0; }
+    .btn-accent:hover { background: #38bdf8; color: #001222; }
+    .section-title { font-weight: 800; }
+    .list-icon { width: 1.35rem; display: inline-flex; justify-content: center; }
+    footer { border-top: 1px solid var(--divider); color: var(--muted); }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="brand-logo" href="#top" aria-label="blacklog.net forside">
+        <span class="blacklog">blacklog</span><span class="dotnet">.net</span>
+      </a>
+      <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-light" href="#downloads"><i class="bi bi-download me-1"></i>Downloads</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#links"><i class="bi bi-link-45deg me-1"></i>Nyttige links</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#kontakt"><i class="bi bi-chat-dots me-1"></i>Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-5">Velkommen til <span class="blacklog">blacklog</span><span class="dotnet">.net</span></h1>
+          <p class="lead mt-3">Her finder du hurtig adgang til fjernsupport-klienter, kontaktoplysninger og nyttige links. Siden er lavet for at være enkel, rar og 
+            nem at bruge, så du kan få hjælp.</p>
+          <div class="d-flex gap-2 flex-wrap mt-4">
+            <a class="btn btn-accent btn-lg" href="#downloads"><i class="bi bi-download me-2"></i>Gå til downloads</a>
+            <!-- <a class="btn btn-outline-light btn-lg" href="#kontakt"><i class="bi bi-camera-video me-2"></i>Book videomøde</a> -->
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card support-card shadow-lg rounded-4">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3 section-title"><i class="bi bi-life-preserver me-2"></i>Support i tre trin</h2>
+              <ol class="mb-0">
+                <li class="mb-2"><span class="list-icon"><i class="bi bi-1-circle"></i></span> Download den klient, der passer til din enhed.</li>
+                <li class="mb-2"><span class="list-icon"><i class="bi bi-2-circle"></i></span> Start klienten og del din <em>kode</em> med mig.</li>
+                <li><span class="list-icon"><i class="bi bi-3-circle"></i></span> Vi løser det sammen, roligt, sikkert og hyggeligt.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DOWNLOADS -->
+  <section class="py-5" id="downloads">
+    <div class="container">
+      <h2 class="mb-4 section-title"><i class="bi bi-download me-2"></i>Downloads: RustDesk fjernsupport klienter</h2>
+      <p class="text-secondary">Vælg dit operativsystem.</p>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title"><i class="fa-brands fa-linux me-2"></i>Arch / Manjaro Linux</h3>
+              <p class="text-secondary">PKG/Arch package (x86_64).</p>
+              <a class="btn btn-accent w-100" href="/assets/downloads/gorm-help-x86_64.pkg.tar.zst">Download til Arch/Manjaro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title"><i class="fa-brands fa-linux me-2"></i>Debian / Ubuntu / Mint</h3>
+              <p class="text-secondary">DEB-pakke (x86_64).</p>
+              <a class="btn btn-accent w-100" href="/assets/downloads/gorm-help-x86_64.deb">Download til Debian/Ubuntu/Mint</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title"><i class="fa-brands fa-linux me-2"></i>Fedora / RHEL</h3>
+              <p class="text-secondary">RPM-pakke (x86_64).</p>
+              <a class="btn btn-accent w-100" href="/assets/downloads/gorm-help-x86_64.rpm">Download til Fedora/RHEL</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title"><i class="bi bi-apple me-2"></i>macOS silicon</h3>
+              <p class="text-secondary">DMG (Apple Silicon).</p>
+              <a class="btn btn-accent w-100" href="/assets/downloads/gorm-help-arm64.dmg">Download til macOS</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title"><i class="bi bi-apple me-2"></i>macOS intel</h3>
+              <p class="text-secondary">DMG (Intel).</p>
+              <a class="btn btn-accent w-100" href="/assets/downloads/gorm-help-x64.dmg">Download til macOS</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title"><i class="bi bi-windows me-2"></i>Windows</h3>
+              <p class="text-secondary">Installer (x64).</p>
+              <a class="btn btn-accent w-100" href="/assets/downloads/gorm-help.msi">Download til Windows</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section class="py-5" id="links">
+    <div class="container">
+      <h2 class="mb-4 section-title"><i class="bi bi-link-45deg me-2"></i>Nyttige links</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-5">
+          <div class="card h-100 rounded-4">
+            <div class="card-body">
+              <h3 class="h5 card-title">SynTech</h3>
+              <p class="text-secondary">Samarbejde om digital suverænitet, åbne standarder og praktiske wargaming-kurser.</p>
+              <a class="btn btn-outline-light" href="https://syntech.dk" target="_blank" rel="noopener">Besøg syntech.dk <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="py-5" id="kontakt">
+    <div class="container">
+      <h2 class="mb-4 section-title"><i class="bi bi-chat-dots me-2"></i>Kontakt</h2>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card contact-card rounded-4 h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-person-badge" style="font-size:2rem"></i>
+                <div>
+                  <h3 class="h5 mb-2">Gorm Reventlow</h3>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1"><i class="bi bi-envelope me-2"></i><a href="mailto:gorm@reventlow.com">gorm@reventlow.com</a></li>
+                    <li class="mb-1"><i class="bi bi-telephone me-2"></i><a href="tel:+4520529367">+45 20 52 93 67</a></li>
+                    <li class="mb-1"><i class="bi bi-camera-video me-2"></i><a href="https://meet.reventlow.com" target="_blank" rel="noopener">Video møde: meet.reventlow.com</a></li>
+                  </ul>
+                  <p class="mt-3 mb-0">Jeg svarer så hurtigt jeg kan – og altid venligt.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-5">
+          <div class="card contact-card rounded-4 h-100">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase">Åbningstider (typisk)</h3>
+              <p class="mb-3">Hverdage 09:00–16:00. Akut hjælp efter aftale.</p>
+              <a class="btn btn-accent w-100" href="https://meet.reventlow.com" target="_blank" rel="noopener"><i class="bi bi-calendar-event me-2"></i>Book et videomøde</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>
+        <span class="brand-logo"><span class="blacklog">blacklog</span><span class="dotnet">.net</span></span>
+        <span class="ms-2">© <span id="year"></span></span>
+      </div>
+      <div class="small">Gorm Reventlow</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
