@@ -102,7 +102,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="section-title">RustDesk fjernsupport klienter</h2>
-        <p class="section-subtitle">Vælg dit operativsystem</p>
+        <p class="section-subtitle">Vælg dit operativsystem — Linux-pakker opdateres automatisk via <a href="https://pkgs.blacklog.net" class="text-amber-700 hover:underline">pkgs.blacklog.net</a></p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -113,12 +113,15 @@
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-1">Arch / Manjaro</h3>
-              <p class="text-sm text-gray-600">PKG package (x86_64)</p>
+              <p class="text-sm text-gray-600">Pakkerepo — opdateres med pacman -Syu</p>
             </div>
           </div>
-          <a href="/assets/downloads/gorm-help-x86_64.pkg.tar.zst" class="btn-secondary w-full justify-center mt-4">
-            Download
-          </a>
+          <pre class="bg-gray-900 text-gray-100 rounded-xl p-3 text-xs overflow-x-auto"><code>sudo tee -a /etc/pacman.conf &lt;&lt;'EOF'
+[blacklog]
+SigLevel = Optional TrustAll
+Server = https://pkgs.blacklog.net/arch
+EOF
+sudo pacman -Sy rustdesk rustdesk-blacklog-config</code></pre>
         </div>
 
         <div class="download-card card hover:border-amber-300">
@@ -128,12 +131,17 @@
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-1">Debian / Ubuntu</h3>
-              <p class="text-sm text-gray-600">DEB package (x86_64)</p>
+              <p class="text-sm text-gray-600">Pakkerepo — opdateres med apt upgrade</p>
             </div>
           </div>
-          <a href="/assets/downloads/gorm-help-x86_64.deb" class="btn-secondary w-full justify-center mt-4">
-            Download
-          </a>
+          <pre class="bg-gray-900 text-gray-100 rounded-xl p-3 text-xs overflow-x-auto"><code>sudo install -d /etc/apt/keyrings
+curl -fsSL https://pkgs.blacklog.net/blacklog-repo.key \
+  | sudo tee /etc/apt/keyrings/blacklog.asc
+echo "deb [signed-by=/etc/apt/keyrings/blacklog.asc] \
+  https://pkgs.blacklog.net/apt stable main" \
+  | sudo tee /etc/apt/sources.list.d/blacklog.list
+sudo apt update
+sudo apt install rustdesk rustdesk-blacklog-config</code></pre>
         </div>
 
         <div class="download-card card hover:border-amber-300">
@@ -143,12 +151,19 @@
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-1">Fedora / RHEL</h3>
-              <p class="text-sm text-gray-600">RPM package (x86_64)</p>
+              <p class="text-sm text-gray-600">Pakkerepo — opdateres med dnf upgrade</p>
             </div>
           </div>
-          <a href="/assets/downloads/gorm-help-x86_64.rpm" class="btn-secondary w-full justify-center mt-4">
-            Download
-          </a>
+          <pre class="bg-gray-900 text-gray-100 rounded-xl p-3 text-xs overflow-x-auto"><code>sudo tee /etc/yum.repos.d/blacklog.repo &lt;&lt;'EOF'
+[blacklog]
+name=Blacklog RustDesk
+baseurl=https://pkgs.blacklog.net/rpm
+enabled=1
+gpgcheck=0
+repo_gpgcheck=1
+gpgkey=https://pkgs.blacklog.net/blacklog-repo.key
+EOF
+sudo dnf install rustdesk rustdesk-blacklog-config</code></pre>
         </div>
 
         <div class="download-card card hover:border-amber-300">
@@ -158,12 +173,13 @@
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-1">macOS Silicon</h3>
-              <p class="text-sm text-gray-600">DMG (Apple Silicon)</p>
+              <p class="text-sm text-gray-600">DMG (Apple Silicon) — nyeste version</p>
             </div>
           </div>
-          <a href="/assets/downloads/gorm-help-arm64.dmg" class="btn-secondary w-full justify-center mt-4">
+          <a href="https://pkgs.blacklog.net/downloads/rustdesk-latest-aarch64.dmg" class="btn-secondary w-full justify-center mt-4">
             Download
           </a>
+          <p class="text-xs text-gray-500 mt-3">Kør derefter <a href="https://pkgs.blacklog.net/downloads/macos-configure.sh" class="text-amber-700 hover:underline">macos-configure.sh</a> én gang for at forbinde til serveren.</p>
         </div>
 
         <div class="download-card card hover:border-amber-300">
@@ -173,12 +189,13 @@
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-1">macOS Intel</h3>
-              <p class="text-sm text-gray-600">DMG (Intel)</p>
+              <p class="text-sm text-gray-600">DMG (Intel) — nyeste version</p>
             </div>
           </div>
-          <a href="/assets/downloads/gorm-help-x64.dmg" class="btn-secondary w-full justify-center mt-4">
+          <a href="https://pkgs.blacklog.net/downloads/rustdesk-latest-x86_64.dmg" class="btn-secondary w-full justify-center mt-4">
             Download
           </a>
+          <p class="text-xs text-gray-500 mt-3">Kør derefter <a href="https://pkgs.blacklog.net/downloads/macos-configure.sh" class="text-amber-700 hover:underline">macos-configure.sh</a> én gang for at forbinde til serveren.</p>
         </div>
 
         <div class="download-card card hover:border-amber-300">
@@ -188,12 +205,13 @@
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-1">Windows</h3>
-              <p class="text-sm text-gray-600">MSI installer (x64)</p>
+              <p class="text-sm text-gray-600">Selv-konfigurerende installer (x64)</p>
             </div>
           </div>
-          <a href="/assets/downloads/gorm-help.msi" class="btn-secondary w-full justify-center mt-4">
+          <a href="https://pkgs.blacklog.net/downloads/rustdesk-host=help.blacklog.net,key=kbvqsWFhZphFNcNOerLRtDCGVgD2ccSsTkE23JVXvxo=.exe" class="btn-secondary w-full justify-center mt-4">
             Download
           </a>
+          <p class="text-xs text-gray-500 mt-3">Serveradressen ligger i filnavnet — omdøb ikke filen før installation.</p>
         </div>
       </div>
     </div>
